@@ -1,0 +1,24 @@
+一.整形
+1.int 4byte
+2.short int 2byte
+3.long int 4byte
+(不同编译环境下的字节数可能不一样，可以输出sizeof(short int)来显示short int字节的长度)
+（程序默认数据类型为signed。。。即有符号的，若要定义无符号的，则在数据类型前加上unsigned）
+负数a的补码等于整数a的取反+1
+cout<<hex<<a<<out//输出a的十六进制
+oct八进制
+dec十进制
+二.实型
+folat 4byte 精度7位
+double 8byte 精度15位
+long double 8byte 精度15位
+cout<<setprecision(100)<<a<<endl;//表示输出精度为100位的a，若不定义，系统默认6位
+
+
+三.常量
+const表示 ex：const double PI=3.14159表示双精度常量
+通常默认为double型
+
+
+四.关于变量的名字
+

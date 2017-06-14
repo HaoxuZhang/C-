@@ -1,0 +1,2 @@
+cout<<fixed<<setprecision(3)<<a<<endl;表示输出a的精确到小数点后3位的值，用于头文件<iomanip>下
+sqrt(x):对x开平方根    pow(x,y):计算x的y次方   用于<cmath>下
