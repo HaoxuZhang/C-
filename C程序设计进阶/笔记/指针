@@ -1,0 +1,75 @@
+&c表示取变量c的地址，即c所处的存储空间的起始位置
+*为指针，*&c表示输出c的地址的值，即c的值，若c=76, 则*&c的值就是76
+专门用于存放地址的变量称为指针变量，若pointer是存放变量c的地址的指针变量，则称它为指向变量c的指针变量
+对指针变量的定义：
+int *pointer;(*是标注出该变量为指针型，int是表示指针变量的基类型，即pointer所指向的变量的类型，pointer是指针变量的名字)
+指针变量的赋值：
+int c=76;
+int *pointer;//定义
+pointer=&c;//赋值
+可以用pointer访问c的值，*pointer为pointer所指向的存储单元的内容，即*pointer就可以当作变量c来使用
+ex.
+int iCount=18;
+int *iPtr=&iCount;
+*iPtr=58;//用这种方式赋值后，iCount的值也被重新赋值
+cout<<iCount<<endl;
+cout<<iPtr<<endl;
+cout<<&iCount<<endl;
+cout<<*iPtr<<endl;
+cout<<&iPtr<<endl;
+
+如何给指针变量赋初始值：
+int *p1=NULL;
+
+pionter++的含义：
+看pointer指向的变量的类型占几个字节，就加几乘1
+
+指针是地址;指针变量是存放地址的变量。
+
+
+指针作为函数参数的表达方式：
+1.int max(int *p,int*q)
+2.int max(array[])//直接用数组名字，程序会默认将数组名作为指针变量
+如何限制指针功能：
+int sum(const int array[],int n)
+在形参array前加上const，就把array变成了一个指向符号常量的指针，该函数里就不能再修改数组中的元素了
+const int *p 该语句定义了一个指向符号常量的指针，即该指针所指向的量为符号常量，不能被重新赋值或修改
+ex.
+int a=256;
+int b=20;
+const int *p=&a;
+*p=257//错误
+p=&b//但是这样做是可以的，可以对p进行重新赋值
+
+总结指向符号常量的指针：
+1.被指向的符号常量不能被重新赋值
+2.仍然可以给指针进行重新赋值
+
+
+
+返回指针值的函数：
+表达形式：
+int *function(int x,int y)
+
+需要注意的例子：
+#include<iostream>
+using namespace std;
+int *p1()
+{
+int a=20;
+return &a;
+}
+int main()
+{
+int *p;
+p=p1();
+cout<<*P<<endl;
+return 0;
+}
+//该程序打印出来的东西无法预测，因为指针指向的是局部变量，当p1函数被调用后，内存被释放掉，该指针所指向的地址的量就不一定是什么了
+如何解决上述例子的问题：
+1.定义全局变量
+2.定义静态局部变量：static int a=20
+该局部变量的值在函数调用结束后不消失而保留原值，其生存周期为从定义该变量开始直到整个程序结束，若被调用的函数中存在静态局部变量的定义，则该定义语句只被执行一次，不会因反复调用该函数而被反复赋值与定义
+
+
