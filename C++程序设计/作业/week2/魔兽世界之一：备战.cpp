@@ -3,19 +3,19 @@
 using namespace std;
 class RED
 {
-int dragonNum,dragonHp,dragonAd;
+int dragonNum,dragonHp,dragonAd;//分别代表每种战士的数量，血量，攻击力
 int ninjaNum,ninjaHp,ninjaAd;
 int icemanNum,icemanHp,icemanAd;
 int lionNum,lionHp,lionAd;
 int wolfNum,wolfHp,wolfAd;
 public:
-RED(int i,int j,int k,int l,int m):dragonHp(i),ninjaHp(j),icemanHp(k),lionHp(l),wolfHp(m)
+RED(int i,int j,int k,int l,int m):dragonHp(i),ninjaHp(j),icemanHp(k),lionHp(l),wolfHp(m)//定义初始化构造函数
 {dragonNum=0;
 ninjaNum=0;
 icemanNum=0;
 lionNum=0;
 wolfNum=0;}
-int hp(int i)
+int hp(int i)//定义该函数来返回每个战士的血量值
 {
 if(i==0)
    return icemanHp;
@@ -28,7 +28,7 @@ if(i==3)
 if(i==4)
    return dragonHp;
 }
-void numPlus(int i)
+void numPlus(int i)//该函数来增加战士数量
 {
 if(i==0)
    icemanNum++;
@@ -41,7 +41,7 @@ if(i==3)
 if(i==4)
    dragonNum++;
 }
-int numOut(int i)
+int numOut(int i)//返回战士的数量
 {
 if(i==0)
    return icemanNum;
@@ -57,7 +57,7 @@ if(i==4)
 };
 
 
-class BLUE
+class BLUE//BLUE类与RED类相对应，只是一些顺序不同
 {
 int dragonNum,dragonHp,dragonAd;
 int ninjaNum,ninjaHp,ninjaAd;
@@ -125,12 +125,12 @@ for(i=0;i<n;i++)
    cout<<"Case:"<<i+1<<endl;
    char cRed[5][7]={"iceman","lion","wolf","ninja","dragon"};
    char cBlue[5][7]={"lion","dragon","ninja","iceman","wolf"};
-   int numRed=0;
-   int numBlue=0;
-   RED red(mDragon,mNinja,mIceman,mLion,mWolf);
+   int numRed=0;//用来记录红方的战士数量
+   int numBlue=0;//用来记录蓝方的战士数量
+   RED red(mDragon,mNinja,mIceman,mLion,mWolf);//定义两个对象并初始化
    BLUE blue(mDragon,mNinja,mIceman,mLion,mWolf);
    int mred=M,mblue=M;
-   int time=0;
+   int time=0;//记录时间
    bool flag1=true;
    bool flag2=true;
    for(i=0;i<10000;i++)
