@@ -1,0 +1,37 @@
+一.初始化
+1.string s1("hello");
+2.string s2(8,'x');//表示字符串中有8个x
+3.string month="march";
+如果要将单个字符赋值给string对象，不能在初始化时使用
+string s='c'//错误
+string s;
+s='c'//正确
+
+二.函数 string s("hello");
+1.长度
+len=s.length();
+
+2.可以直接输入输出
+cin>>s;
+cout<<s;
+
+3.支持getline函数
+getline(cin,s);
+
+4.s1=s2 可以直接赋值
+  s3.assign(s1,1,3);//将s1中下标为1的字符开始，复制3个字符给s3
+
+5.支持方括号读取
+s[5]='a';
+s.at(5)也可以读取，会检验是否超出范围
+
+6.可以相加
+s1=s1+s2;
+
+7.append连接
+s2.append(s1,3,s1.size());//将s1下标为3开始复制长度为s1.size()的长度个字符给s2后面，超出范围则只复制到s1最后一位
+
+8.可以比较大小（长度）
+
+9.substr()访问子串
+s2=s1.substr(4,5) 将s1下标为4的字符开始复制5个字符给s2

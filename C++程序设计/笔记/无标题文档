@@ -1,0 +1,17 @@
+//复制构造函数
+Array(Array& a){
+int i,j;
+if(a.p){
+hang=a.hang;
+lie=a.lie;
+p=new int*[a.hang];
+for(i=0;i<hang;i++)
+   p[i]=new int[lie];
+for(i=0;i<hang;i++)
+   for(j=0;j<lie;j++)
+      p[i][j]=(a.p)[i][j];
+}
+else
+   p=NULL;
+}
+
