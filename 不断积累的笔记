@@ -1,0 +1,6 @@
+1.
+int main(int argc, char** argv)
+argc表示命令行输入的参数的个数，argv表示命令行输入的字符串。
+例如运行一个可执行文件test，命令行输入：
+test a.jpg
+则argc=2,argv[0]=test,argv[1]=a.jpg
